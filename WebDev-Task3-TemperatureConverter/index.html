@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A simple temperature converter for Celsius, Fahrenheit, and Kelvin." />
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <section class="converter-card" aria-labelledby="page-title">
+      <div class="thermometer" aria-hidden="true">🌡️</div>
+      <p class="eyebrow">QUICK • ACCURATE • SIMPLE</p>
+      <h1 id="page-title">Temperature Converter</h1>
+      <p class="subtitle">Convert temperatures between Celsius, Fahrenheit, and Kelvin.</p>
 
+      <form id="converter-form" novalidate>
+        <label for="temperature">Temperature value</label>
+        <input
+          id="temperature"
+          name="temperature"
+          type="number"
+          step="any"
+          inputmode="decimal"
+          placeholder="e.g. 25"
+          autocomplete="off"
+          aria-describedby="error-message"
+          required
+        />
+
+        <label for="input-unit">Convert from</label>
+        <select id="input-unit" name="input-unit">
+          <option value="celsius">Celsius (°C)</option>
+          <option value="fahrenheit">Fahrenheit (°F)</option>
+          <option value="kelvin">Kelvin (K)</option>
+        </select>
+
+        <p id="error-message" class="error-message" role="alert" aria-live="polite"></p>
+        <button type="submit">Convert temperature <span aria-hidden="true">→</span></button>
+      </form>
+
+      <section class="results" aria-labelledby="results-title" aria-live="polite">
+        <h2 id="results-title">Converted results</h2>
+        <div class="result-grid">
+          <article class="result-tile">
+            <span class="unit-label">CELSIUS</span>
+            <p id="celsius-result" class="result-value">— <small>°C</small></p>
+          </article>
+          <article class="result-tile">
+            <span class="unit-label">FAHRENHEIT</span>
+            <p id="fahrenheit-result" class="result-value">— <small>°F</small></p>
+          </article>
+          <article class="result-tile">
+            <span class="unit-label">KELVIN</span>
+            <p id="kelvin-result" class="result-value">— <small>K</small></p>
+          </article>
+        </div>
+      </section>
+      <p class="footnote">Absolute zero: −273.15 °C · −459.67 °F · 0 K</p>
+    </section>
+    <footer>Built by Sani kumar </footer>
+  </main>
+</body>
+</html>
